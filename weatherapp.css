@@ -1,0 +1,80 @@
+body{
+
+    box-sizing: border-box;
+    background: linear-gradient(to right, #95CCFF 0%, #A6B4BE 30%, #908FB9 100%);
+}
+
+*{
+    padding:0;
+    margin:0;
+    font-family: "Raleway";
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    gap: 10px;
+    width: 400px;
+    height: 500px;
+    padding: 10px;
+    margin-top: 100px;
+    align-items: center;
+    box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.5);
+    border-radius: 8px;
+}
+
+h1{
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    color: whitesmoke;
+    padding: 10px;
+    cursor:default;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+input{
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid rgba(245,245,245,0.3);
+    padding: 5px 10px;
+}
+
+input:focus{
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgba(245,245,245,0.3);
+    
+}
+
+button {
+    margin-left: 20px;
+    border: 2px solid rgba(245,245,245,0.3);
+    padding: 5px 10px;
+    background: none;
+    border-radius: 5px;
+    color: rgba(245,245,245,0.5);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.loc{
+    text-transform: capitalize;
+    font-size: 2rem;
+    color: transparent;
+}
+
+.temperature {
+    font-size:1.2rem;
+    color: transparent;
+}
+
+.like {
+    font-size:1.2rem;
+    color: transparent;
+}
+
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weatherapp.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <title>JSON: Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <form class="weather">
+            <input type="text" placeholder="Enter a City Name" name="location" required>
+            <button type="submit">Search</button>
+        </form>
+        <div class="loc">A</div>
+        <div class="temperature">B</div>
+        <div class="like">C</div>
+    </div>
+    
+
+    <script>
+        const weather=document.querySelector('.weather');
+        const loc=document.querySelector('.loc');
+        const like=document.querySelector('.like');
+        const temperature=document.querySelector('.temperature');
+        
+
+        function weatherLocation(e){
+            e.preventDefault();
+            let location=(this.querySelector('[name="location"]').value).toLowerCase();
+            let url=`https://api.weatherapi.com/v1/current.json?key=c1a1f246219b479999423550233004&q=${location}`;
+            loc.innerHTML=location;
+            fetch(url)
+                .then(response=>response.json())
+                .then(data=>{
+                    console.log(data);
+                    temperature.innerHTML=`${data.current.temp_c} C`;
+                    like.innerHTML=data.current.condition.text;
+                    temperature.style.color='black'
+                    like.style.color='black',
+                    loc.style.color='black'
+                });
+            
+            weather.reset();
+        }
+
+        weather.addEventListener('submit',weatherLocation)
+    </script>
+</body>
+</html>
